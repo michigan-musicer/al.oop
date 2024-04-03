@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.EventListener;
 import java.util.Stack;
 
 // A ChatGPT-generated TowersOfHanoi example.
@@ -30,6 +31,18 @@ public class TowersOfHanoiCompleted extends JPanel {
 //    directly within construction of the reset button.
     public void reset() {
 //        Your code goes here.
+//        step 1: remove all disks from each peg.
+//        step 2: put 5 disks on the first peg.
+//        step 3: call repaint().
+        for (int i = 0; i < 3; ++i) {
+            while (!towers[i].empty()) {
+                towers[i].pop();
+            }
+        }
+        for (int i = this.numDisks; i > 0; i--) {
+            towers[0].push(i);
+        }
+        repaint();
     }
 
     @Override
@@ -82,16 +95,28 @@ public class TowersOfHanoiCompleted extends JPanel {
         // You will need to create a new JButton object and add it to the panel.
         // The JButton object also needs to implement an ActionListener that calls solve()
         // on the towersOfHanoi object passed into the function.
+
+        // This solution uses some fancier construction using anonymous classes.
+        // For a larger application,
+        // this is actually probably a little less clear than using a lambda.
+        panel.add(new JButton(new AbstractAction("Solve") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                towersOfHanoi.solve();
+            }
+        }));
     }
 
 // TASK 3: add button that resets class to initial state when clicked.
 //    We consider the state of towersOfHanoiCompleted to be reset when
 //    all disks are on the FIRST tower.
     private static void addResetButton(JPanel panel, TowersOfHanoiCompleted towersOfHanoi) {
-        // Your code goes here.
-        // You will need to create a new JButton object and add it to the panel.
-        // The JButton object also needs to implement an ActionListener that calls reset()
-        // on the towersOfHanoi object passed into the function.
+        panel.add(new JButton(new AbstractAction("Reset") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                towersOfHanoi.reset();
+            }
+        }));
     }
 
     public static void main(String[] args) {
