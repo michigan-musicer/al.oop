@@ -5,6 +5,6 @@
 //         Note that Triangle should have three instance variables corresponding to
 //         side length 1, side length 2, side length 3.
 //         Additionally, note that you can find the area of a triangle given 3 side lengths
-//         using Heron's formula: https://en.wikipedia.org/wiki/Heron%27s_formula
+//         using Heron's formula: h
 public class Triangle {
 }

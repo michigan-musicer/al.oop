@@ -2,7 +2,7 @@ from shape import Shape
 
 class Rectangle(Shape):
     def __init__(self, name, width, height):
-        super.__init__(name)
+        super().__init__(name)
         self._width = width
         self._height = height
     

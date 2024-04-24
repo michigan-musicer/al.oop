@@ -13,6 +13,8 @@ def main():
     # t2 should have a perimeter of 12 and an area of exactly 6.
 
     for shape in shapes:
-        print(shape.get_type())
+        print(shape.get_shape_type())
         print(shape.get_perimeter())
         print(shape.get_area())
+
+main()
