@@ -1,0 +1,27 @@
+{
+    "presets" : [
+        {
+            "name": "name goes here",
+            "configuration": "queue",
+            "orders": [
+                "pierogi",
+                "żurek",
+                "bigos",
+                "kotlet schabowy"
+            ] 
+        },
+        {
+            "name": "name goes here",
+            "configuration": "stack",
+            "orders": [
+                "pizza",
+                "hamburger",
+                "apple pie",
+                "taco",
+                "pancakes",
+                "fried chicken",
+                "hash brown"
+            ] 
+        }
+    ]
+}
