@@ -1,7 +1,7 @@
 {
     "presets" : [
         {
-            "name": "name goes here",
+            "name": "Polish restaurant",
             "configuration": "queue",
             "orders": [
                 "pierogi",
@@ -11,7 +11,7 @@
             ] 
         },
         {
-            "name": "name goes here",
+            "name": "American restaurant",
             "configuration": "stack",
             "orders": [
                 "pizza",
@@ -22,6 +22,94 @@
                 "fried chicken",
                 "hash brown"
             ] 
+        },
+        {
+            "name": "Inefficient French restaurant",
+            "configuration": "stack",
+            "orders": [
+                "Chicken Marengo",
+                "Hachis Parmentier",
+                "Jambon-beurre",
+                "Poulet chasseur",
+                "Baguette",
+                "Flûtes",
+                "Ficelle",
+                "Flûte",
+                "Boule",
+                "Pain de campagne",
+                "Pain de mie",
+                "Chausson aux pommes",
+                "Chouquette",
+                "Croissant",
+                "Pain au chocolat",
+                "Pain aux raisins",
+                "Pain viennois",
+                "A mille-feuille pastry",
+                "Biscuit Tortoni",
+                "Brioche",
+                "Bûche de Noël",
+                "Café liégeois",
+                "Crème brûlée",
+                "Croquembouche",
+                "Croustade aux pommes",
+                "Éclair",
+                "Far Breton",
+                "Fraisier",
+                "Galette des rois",
+                "Gateau au yaourt",
+                "Macarons",
+                "Madeleine",
+                "Mille-feuilles",
+                "Mousse au chocolat",
+                "Pain perdu",
+                "Quatre-quarts",
+                "Saint Honoré",
+                "Soufflé"
+            ]
+        },
+        {
+            "name": "Efficient French restaurant",
+            "configuration": "queue",
+            "orders": [
+                "Chicken Marengo",
+                "Hachis Parmentier",
+                "Jambon-beurre",
+                "Poulet chasseur",
+                "Baguette",
+                "Flûtes",
+                "Ficelle",
+                "Flûte",
+                "Boule",
+                "Pain de campagne",
+                "Pain de mie",
+                "Chausson aux pommes",
+                "Chouquette",
+                "Croissant",
+                "Pain au chocolat",
+                "Pain aux raisins",
+                "Pain viennois",
+                "A mille-feuille pastry",
+                "Biscuit Tortoni",
+                "Brioche",
+                "Bûche de Noël",
+                "Café liégeois",
+                "Crème brûlée",
+                "Croquembouche",
+                "Croustade aux pommes",
+                "Éclair",
+                "Far Breton",
+                "Fraisier",
+                "Galette des rois",
+                "Gateau au yaourt",
+                "Macarons",
+                "Madeleine",
+                "Mille-feuilles",
+                "Mousse au chocolat",
+                "Pain perdu",
+                "Quatre-quarts",
+                "Saint Honoré",
+                "Soufflé"
+            ]
         }
     ]
 }

@@ -1,10 +1,17 @@
 import json
 from random import random
 
-from queue import Queue
+from queue_1 import Queue
 from stack import Stack
 
+class Order:
+    def __init__(self, name, timestamp):
+        self.name = name
+        self.timestamp = timestamp
+
 class Restaurant:
+    SATISFACTORY_TIME = 1
+
     def __init__(self, name, type):
         self._name = name
         match type:
@@ -26,8 +33,14 @@ class Restaurant:
     def add_order(self, order):
         self._orders.push(order)
 
-    def handle_order(self) -> str:
-        return self._orders.pop()
+    def handle_orders(self, current_time) -> str:
+        for _ in range(self._efficiency):
+            if not self.size():
+                print("Restaurant out of orders for this iteration, stopping for now")
+                break
+            next_order = self._orders.pop()
+            satisfaction = "satisfied" if current_time - next_order.timestamp <= self.SATISFACTORY_TIME else "NOT satisfied"
+            print(f"Handled {next_order.name} in {current_time - next_order.timestamp} time, customer is {satisfaction}!")
 
     # restaurant should have functions to get next order and then serve order
     # orders should be numbered
@@ -36,7 +49,6 @@ class Restaurant:
 def driver(preset_idx):
     f = open("orders.json")
     info = json.load(f)["presets"][preset_idx]
-    print(info)
     r = Restaurant(info["name"], info["configuration"])
     orders = info["orders"]
     orders.reverse()
@@ -44,13 +56,12 @@ def driver(preset_idx):
     print(f"{r.get_name()} is opening for business!") 
     i = 0
     while len(orders) or r.size():
-        while len(orders) and random() < 0.5:
+        while len(orders) and random() < 0.9:
             next_order = orders.pop()
             print(f"Adding {next_order} to list of orders")
-            r.add_order(next_order)
-        if r.size():
-            next_order = r.handle_order()
-            print(f"Next order: {next_order}")
+            r.add_order(Order(next_order, i))
+        r.handle_orders(i)
+        i += 1
     print(f"{r.get_name()} is closing, thank you for coming!")     
 
 if __name__ == "__main__":

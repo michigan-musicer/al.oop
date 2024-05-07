@@ -9,13 +9,13 @@ class Stack:
     def size(self) -> int:
         return self._size
     
-    def front(self) -> str:
+    def front(self):
         return self._s[0]
     
-    def push(self, item : str) -> None:
+    def push(self, item) -> None:
         self._size += 1
         self._s.append(item)
     
-    def pop(self) -> str:
+    def pop(self):
         self._size -= 1
         return self._s.pop()    
