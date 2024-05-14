@@ -20,10 +20,10 @@
  *
  ******************************************************************************/
 
-import java.awt.Color;
+import java.awt.*;
 import java.util.Scanner;
 
-public class Julia
+public class JuliaSolution
 {
 
 
@@ -41,15 +41,15 @@ public class Julia
 
     public static void main(String[] args)
     {
-        /*
+        /**
          * TODO: read in real, imag, n, and ITERS as command line arguments.
          * Use the Mandelbrot example if you aren't sure how to do this.
          */
-        double real = ??;      // a
-        double imag = ??;      // b
-        int n = ??;
-        int ITERS = ??;
-        /* your code ends here. */
+        double real = Double.parseDouble(args[0]);      // a
+        double imag = Double.parseDouble(args[1]);      // b
+        int n = 512;
+        int ITERS = 256;
+//        end solution
         Complex c = new Complex(real, imag);            // c = a + ib
         double xmin = -2.0;
         double ymin = -2.0;
@@ -60,15 +60,21 @@ public class Julia
 
         // read in color map
         Color[] colors = new Color[ITERS];
-        /*
+        /**
          * TODO: read in colors from input.
          * The input object reads in from the file redirection we set up. It has a method called nextInt
          * that you can call to read in the next value from the input.
          * You should set each value in colors to a corresponding RGB value from the input file.
          * If you get stuck, print using System.out.println to help you debug!
          */
-
-        /* your code ends here. */
+        for (int t = 0; t < ITERS; t++)
+        {
+            int r = input.nextInt();
+            int g = input.nextInt();
+            int b = input.nextInt();
+            colors[t] = new Color(r, g, b);
+        }
+        // end
 
 //        Challenge #1: move everything into a file. Put initial parameters in and then list all colors.
 //        Challenge #2: zoom in on the center however many times: fix n (the size) and then create i different zoom-ins
