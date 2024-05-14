@@ -50,7 +50,38 @@ class CircularLinkedList:
     def insert(self, index : int, item : int) -> None:
         # YOUR IMPLEMENTATION HERE
         pass        
+        """
+        Three cases: 
+        - no items in list.
+        - insert at 0 (need to change _begin).
+        - insert elsewhere in non-empty list.
+        """
+        if self.size() == 0:
+            # lst.insert(0, 5) where lst = [] 
+            new_node = self.Node(None, item)
+            self._head = new_node
+        elif index == 0:
+            # lst.insert(0, 5) where lst = [1, 2, 3]
+            new_node = self.Node(self._head, item)
+            self._head = new_node
+            last_node, i = self._head, 0
+            while i < self.size() - 1:
+                last_node = last_node.next
+                i += 1
+            last_node.next = self._head
+        else:
+            # lst.insert(2, 5) where lst = [1, 2, 3]
+            # lst after = [1, 2, 5, 3]
+            new_node = self.Node(None, item)
+            current_node, i = self._head, 0
+            while i < index - 1:
+                current_node = current_node.next
+                i += 1
+            new_node.next = current_node.next
+            current_node.next = new_node            
 
+        self._size += 1
+    
     """
     Adds item to the end of the linked list.
     - On a CircularlLinkedList [1, 2, 3], call append(1) to get [1, 2, 3, 0].

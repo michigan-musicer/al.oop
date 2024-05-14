@@ -1,45 +1,8 @@
 import java.util.ArrayList;
 
-public class Vector<T> {
-    private ArrayList<T> _container;
-    public Vector()
-    {
-        this._container = new ArrayList<>();
-    }
-
-    public boolean empty()
-    {
-        return this._container.isEmpty();
-    }
-
-    public int size()
-    {
-        return this._container.size();
-    }
-
-    public T get(int index)
-    {
-        return this._container.get(index);
-    }
-
-    public void pushBack(T elt)
-    {
-        this._container.addLast(elt);
-    }
-
-    public void pushFront(T elt)
-    {
-        this._container.addFirst(elt);
-    }
-
-    public T popBack()
-    {
-        return this._container.removeLast();
-    }
-
-    public T popFront()
-    {
-        return this._container.removeFirst();
-    }
-
-}
+/**
+ * TODO: based on the format from stack and queue, implement a templated vector class.
+ * Vector will NOT inherit from the container interface.
+ * Vector should have the following functions: size, empty, get, pushFront, pushBack, popFront, popBack.
+ * If you implement everything correctly, you should be able to run Main.
+**/
