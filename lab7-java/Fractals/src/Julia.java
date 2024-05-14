@@ -1,3 +1,4 @@
+
 // Adapted from https://introcs.cs.princeton.edu/java/32class/ColorJulia.java.html
 // mandel.txt is taken from exercise 35 on https://introcs.cs.princeton.edu/java/32class/
 
@@ -24,12 +25,15 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Julia {
+public class Julia
+{
 
 
     // return number of iterations to check z is in the Julia set of c
-    static int julia(Complex c, Complex z, int maximumIterations) {
-        for (int t = 0; t < maximumIterations; t++) {
+    static int julia(Complex c, Complex z, int maximumIterations)
+    {
+        for (int t = 0; t < maximumIterations; t++)
+        {
             if (z.abs() > 2.0) return t;
             z = z.times(z).plus(c);
         }
@@ -37,24 +41,30 @@ public class Julia {
     }
 
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args)
+    {
         double real = Double.parseDouble(args[0]);      // a
         double imag = Double.parseDouble(args[1]);      // b
         Complex c = new Complex(real, imag);            // c = a + ib
-        double xmin   = -2.0;
-        double ymin   = -2.0;
-        double width  =  4.0;
-        double height =  4.0;
+        double xmin = -2.0;
+        double ymin = -2.0;
+        double width = 4.0;
+        double height = 4.0;
 
         Scanner input = new Scanner(System.in);
-//        Scanner input = new Scanner(new File(args[2]));
 
         int n = 512;
-        int ITERS  = 256;
+        int ITERS = 256;
 
         // read in color map
         Color[] colors = new Color[ITERS];
-        for (int t = 0; t < ITERS; t++) {
+        /**
+         * TODO: read in colors from input.
+         * The input object reads in from the file redirection we set up, so .
+         * If you get stuck, print using System.out.println to help you debug!
+         */
+        for (int t = 0; t < ITERS; t++)
+        {
             int r = input.nextInt();
             int g = input.nextInt();
             int b = input.nextInt();
@@ -62,8 +72,10 @@ public class Julia {
         }
         Picture picture = new Picture(n, n);
 
-        for (int col = 0; col < n; col++) {
-            for (int row = 0; row < n; row++) {
+        for (int col = 0; col < n; col++)
+        {
+            for (int row = 0; row < n; row++)
+            {
                 double x = xmin + col * width / n;
                 double y = ymin + row * height / n;
                 Complex z = new Complex(x, y);
@@ -73,8 +85,8 @@ public class Julia {
         }
         picture.show();
     }
-
 }
+
 
 
 //Copyright © 2000–2022, Robert Sedgewick and Kevin Wayne.
