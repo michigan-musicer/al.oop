@@ -41,10 +41,6 @@ class Restaurant:
             next_order = self._orders.pop()
             satisfaction = "satisfied" if current_time - next_order.timestamp <= self.SATISFACTORY_TIME else "NOT satisfied"
             print(f"Handled {next_order.name} in {current_time - next_order.timestamp} time, customer is {satisfaction}!")
-
-    # restaurant should have functions to get next order and then serve order
-    # orders should be numbered
-    # we can run a loop where it's random whether an order comes in on a particular iteration
      
 def driver(preset_idx):
     f = open("orders.json")
