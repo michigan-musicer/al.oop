@@ -23,10 +23,8 @@
 import java.awt.*;
 import java.util.Scanner;
 
-public class JuliaSolution
+public class JuliaChallengeSolution
 {
-
-
     // return number of iterations to check z is in the Julia set of c
     static int julia(Complex c, Complex z, int maximumIterations)
     {
@@ -41,32 +39,21 @@ public class JuliaSolution
 
     public static void main(String[] args)
     {
-        /**
-         * TODO: read in real, imag, n, and ITERS as command line arguments.
-         * Use the Mandelbrot example if you aren't sure how to do this.
-         */
-        double real = Double.parseDouble(args[0]);      // a
-        double imag = Double.parseDouble(args[1]);      // b
-        int n = Integer.parseInt(args[2]);
-        int ITERS = Integer.parseInt(args[3]);
-//        end solution
+//      This part solves challenge 1.
+        Scanner input = new Scanner(System.in);
+        double real = input.nextDouble();      // a
+        double imag = input.nextDouble();      // b
+        int n = input.nextInt();
+        int ITERS = input.nextInt();
+//      end section
         Complex c = new Complex(real, imag);            // c = a + ib
         double xmin = -2.0;
         double ymin = -2.0;
         double width = 4.0;
         double height = 4.0;
 
-        Scanner input = new Scanner(System.in);
-
         // read in color map
         Color[] colors = new Color[ITERS];
-        /**
-         * TODO: read in colors from input.
-         * The input object reads in from the file redirection we set up. It has a method called nextInt
-         * that you can call to read in the next value from the input.
-         * You should set each value in colors to a corresponding RGB value from the input file.
-         * If you get stuck, print using System.out.println to help you debug!
-         */
         for (int t = 0; t < ITERS; t++)
         {
             int r = input.nextInt();
@@ -74,9 +61,7 @@ public class JuliaSolution
             int b = input.nextInt();
             colors[t] = new Color(r, g, b);
         }
-        // end
 
-//        Challenge #1: move everything into a file. Put initial parameters in and then list all colors.
 //        Challenge #2: zoom in on the center however many times: fix n (the size) and then create i different zoom-ins
 //        where i is another parameter passed into the program arguments. This means creating i different Picture objects
 //        with different zoom levels - see Mandelbrot class for how to implement.
