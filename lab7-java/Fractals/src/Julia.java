@@ -45,10 +45,10 @@ public class Julia
          * TODO: read in real, imag, n, and ITERS as command line arguments.
          * Use the Mandelbrot example if you aren't sure how to do this.
          */
-        double real = ??;      // a
-        double imag = ??;      // b
-        int n = ??;
-        int ITERS = ??;
+        double real = 0;      // should be passed into args as -1.0 or any small double value
+        double imag = 0;      // should be passed into args as 1.0 or any small double value
+        int n = 0;            // should be passed into args as 512
+        int ITERS = 0;        // should be passed into args as 256
         /* your code ends here. */
         Complex c = new Complex(real, imag);            // c = a + ib
         double xmin = -2.0;
@@ -71,9 +71,7 @@ public class Julia
         /* your code ends here. */
 
 //        Challenge #1: move everything into a file. Put initial parameters in and then list all colors.
-//        Challenge #2: zoom in on the center however many times: fix n (the size) and then create i different zoom-ins
-//        where i is another parameter passed into the program arguments. This means creating i different Picture objects
-//        with different zoom levels - see Mandelbrot class for how to implement.
+//        Challenge #2: create a file generator to generate random color files for Julia.
         Picture picture = new Picture(n, n);
 
         for (int col = 0; col < n; col++)
