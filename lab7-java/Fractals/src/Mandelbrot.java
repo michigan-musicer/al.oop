@@ -10,9 +10,8 @@
  *  % java Mandelbrot -0.5 0 2
  *
  ******************************************************************************/
-
 import java.awt.Color;
-
+//-1 0 1
 public class Mandelbrot {
 
     // return number of iterations to check if c = a + ib is in Mandelbrot set

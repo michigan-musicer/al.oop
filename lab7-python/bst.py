@@ -24,8 +24,13 @@ class BST:
     # at section 12.5.1.3 for an example + Java implementation.
     # We will probably do this together in class.
     def __str__(self) -> str:
-        # REPLACE pass WITH YOUR IMPLEMENTATION
-        pass
+        def helper(n) -> None:
+            if n:
+                helper(n.left)
+                print(n.val)
+                helper(n.right)
+        
+        helper(self._root)
 
     # Requires that val is not already in this BST.
     def insert(self, val=None) -> None:
